@@ -1,6 +1,6 @@
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
 }
 
@@ -49,7 +49,7 @@ body.wrong {
 
 .btn {
     --hue: var(--hue-neutral);
-    border: 1px solid hsl(var(--hue), 100%, 30%);
+    border: 1px solid hsl(var(--hue), 100%, 20%);
     background-color: hsl(var(--hue), 100%, 50%);
     padding: 5px 10px;
     border-radius: 5px;
@@ -62,4 +62,33 @@ body.wrong {
   border-width: 2px;
   color: blueviolet;
   border-radius: 5px;
+}
+
+.start-btn, .next-btn, .home-btn, .highscores-btn{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px;
+    margin:10px
+}
+
+.homeControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display:none;
+}
+
+.highscores {
+
+}
+
+.scoreMark {
+
+}
+
+.quizTimer {
+    
 }
