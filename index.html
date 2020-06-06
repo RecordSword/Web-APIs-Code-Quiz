@@ -1,39 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="./style.css" rel="stylesheet">
-  <script defer src="./script.js"></script>
-  <title>Quiz App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./reset.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+
+    <title>Coding Quiz</title>
 </head>
-<body>
-  <div class="container">
-    <div id="question-container" class="hide">
-      <div id="question">Question</div>
-      <div id="answer-buttons" class="btn-grid">
-        <button class="btn">Answer 1</button>
-        <button class="btn">Answer 2</button>
-        <button class="btn">Answer 3</button>
-        <button class="btn">Answer 4</button>
-      </div>
-    </div>
-    <div class="homeControls">
-      <button id="start-btn" class="start-btn btn">Start</button>
-      <button id="next-btn" class="next-btn btn hide">Next</button>
-      <button id="highscores-btn" class="highscores-btn btn">Highscores</button>
-      <button id="home-btn" class="home-btn btn hide">Home</button>
 
+<body">
+    <div class="container">
+        <div class="homeControls btn-grid">
+            <button class="hide highscores-btn btn" id="highscores-btn" onclick="viewHighScores()">
+                View High scores-menu
+            </button>
+            <button class="hide home-btn btn" id="back-to-start-link" onclick="goBackToStart()"
+                style="display: none;">Go Back to
+                Start
+            </button>
+            <div id="quizCountdownContainer">
+                Time: <span id="quizCountdown"  style="display: none">0</span>
+            </div>
+        </div>
     </div>
-    <div>
-        <h5 id="quizCountdown">Time:<span id="currentTime"></span></h5>
     </div>
-    <div class="hide">
-        <h5><span id="scoreContainer"> Points</span></h5>
-    </div>
+    <div class="container">
+        <h1 id="heading1">Coding Quiz Challenge</h1>
+        <div id="enter-initials-menu" style="display: none;">
+            <h3>Enter your initials</h3>
+            <form>
+                <input id="initials-input" type="text" name="score" style="border: 1px solid rgb(92, 143, 113);" />
+                <button style="background-color: rgb(92, 143, 113);;
+                        border: 1px solid #d6d6d6;
+                        font-family: Arial, Helvetica, sans-serif;
+                        height: 28px;
+                        border-left: none;" id="submit-intials-btn">Submit</button>
+            </form>
+        </div>
+        <div id="start-menu">
+            <p>Test your knowledge of Javascript by answering a series of questions.</p>
 
+            <button onclick="startQuiz()" class="btn btn-dark">Start the quiz</button>
+        </div>
 
-  </div>
-</body>
+        <div id="choices-menu">
+
+        </div>
+
+        <div id="scores-menu">
+
+        </div>
+        </main>
+    </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+
+    </body>
+
 </html>
