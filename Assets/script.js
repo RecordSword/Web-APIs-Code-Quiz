@@ -1,54 +1,54 @@
-//arrray of the quiz questions, avaialble choices, and correct answers     
+//Quiz questions and correct answers     
 var questions = [
     {
-        title: "Which method would you use to find an ID element?",
-        choices: ["getElementsById()", "getElementByID()", "getElementbyId()", "getElementsById()"],
-        answer: "getElementbyId()"
+        title: "What Guitar manufacturer has the model Les Paul?",
+        choices: ["Fender", "Paul Reed Smith", "Gibson", "Ibanez"],
+        answer: "Gibson"
     },
     {
-        title: "To see if two variables are equal in an if / else statement you would use ____.",
-        choices: ["=", "==", "'equals'", "!="],
-        answer: "=="
+        title: "Elvis Presley's home has been called?",
+        choices: ["Faceland", "Braceland", "Traceland", "Graceland"],
+        answer: "Graceland"
     },
     {
-        title: "Math.random() returns ____.",
-        choices: ["a number between 1 and 9", "a number between 0 and 9", "a number between 0 and 1", "a number between 0 and 99"],
-        answer: "a number between 0 and 1"
+        title: "The Super Mario Theme song was created for Super Mario Bros. in what year?",
+        choices: ["1984", "1985", "1986", "1987"],
+        answer: "1985"
     },
     {
-        title: "The appendChild() method places a node as the ____ child.",
-        choices: ["first", "last place you left off", "random", "last"],
-        answer: "last"
+        title: "Final Fantasy 7 was a story about a mercenary called...",
+        choices: ["Star Forcer", "Cloud Strife", "Sky Brace", "Trainer Sky"],
+        answer: "Cloud Strife"
     },
     {
-        title: "The first index of an array is ____.",
-        choices: ["0", "1", "6", "custom"],
-        answer: "0"
+        title: "The Dreamcast is owned by which company?",
+        choices: ["Sega", "Sony", "Microsoft", "Nintendo"],
+        answer: "Sega"
     },
     {
-        title: "Javascript was created by ____.",
-        choices: ["Jeffrey Javascript", "Brendan Eich", "Who F. Cares Jr.", "Ned Flanders"],
-        answer: "Brendan Eich"
+        title: "In the original movie project 'Star Wars', the main charactor's name was origionally going to be...",
+        choices: ["Luke Skywalker", "Luke Starkiller", "Fluke Farlicker", "Luke Tarlarker"],
+        answer: "Luke Starkiller"
     },
     {
-        title: "What is not an example of an HTML event?",
-        choices: ["User hitting a key", "User clicking a mouse", "Web page loading", "When my dad yells at me"],
-        answer: "When my dad yells at me"
+        title: "How far would I go?",
+        choices: ["500 miles", "500 more", "1,000 miles", "At your door..."],
+        answer: "1,000 miles"
     },
     {
-        title: "What are Javascript's Boolean data type values?",
-        choices: ["skibby and hibby", "property and key name", "Tom and Jerry", "true and false"],
-        answer: "true and false"
+        title: "Pure water is what pH Level?",
+        choices: ["7pH", "8pH", "9pH", "10pH"],
+        answer: "7pH"
     },
     {
-        title: "Javascript variables can be ______ ",
-        choices: ["globally scoped", "function scoped", "locally scoped", "all of the above"],
-        answer: "all of the above"
+        title: "How many bones do Sharks have in their bodies?",
+        choices: ["20", "200", "2,000", "None"],
+        answer: "None"
     },
     {
-        title: "'I like the movie Cats' can be considered _____ in Javascript",
-        choices: ["a string", "a number", "a boolean value", "a shit opinion"],
-        answer: "a string"
+        title: "Karijini is a national park based in which Australian State",
+        choices: ["Queensland", "Western Australia", "Northern Terretory", "New South Wales"],
+        answer: "Western Australia"
     }
 ];
 
@@ -65,23 +65,17 @@ var clearScoresBtn = document.getElementById('clear-btn');
 var backToStartLink = document.getElementById('back-to-start-link');
 var viewHighScoresLink = document.getElementById('highscores-btn');
 
-// Default numbers for the game
-// to start at first question, setting time, etc.
 var questionNumber = 0;
 
-// Variable containing question array data
-// referred to in the functions
 var numberOfQuestions = questions.length;
 var questionChoices = questions[questionNumber].choices;
 
-// 15 seconds for each question to determine total game time
-var gameTimer = numberOfQuestions * 15;
+// 10 seconds for each question to determine total game time
+var gameTimer = numberOfQuestions * 10;
 
 var finalScore;
 var highScores = [];
 
-// Check to see if there is an existing array of 
-// high scores in the localStorage
 renderHighScores()
 
 function renderHighScores() {
@@ -91,7 +85,6 @@ function renderHighScores() {
         return;
     }
     var objectScores = JSON.parse(savedHighScores);
-    // console.log("Saved High Scores: " + savedHighScores);
     highScores = objectScores;
 
 }
@@ -99,8 +92,6 @@ function renderHighScores() {
 
 // Function for when user clicks the start button
 function startQuiz() {
-
-    // console.log("Question Number: " + questionNumber);
 
     // Hide the default start menu
     startMenu.setAttribute("style", "display: none;");
@@ -118,17 +109,14 @@ function startQuiz() {
     countdownClock();
 
     // Place first question in h1 and create buttons
-    // of the multiple choice answers below
     questionHeading.textContent = questions[questionNumber].title;
     listChoices();
 
 }
 
 function listChoices() {
-    // Loop through the available choices in
-    // the given question array index
+    // Loop through the available choices
     for (var i = 0; i < questionChoices.length; i++) {
-        // Create, build, and place the available choices
         var choiceBtn = document.createElement("button");
         choiceBtn.setAttribute("class", "btn btn-dark btn-sm d-block my-2 choice-btn");
         choiceBtn.setAttribute("id", "choice-" + i);
@@ -137,8 +125,7 @@ function listChoices() {
 
     }
 }
-
-// Notify user that they got the answer right
+// Correct Answer
 function correctAnswer() {
     var correctNotify = document.createElement("div");
     correctNotify.setAttribute("class", "border-top mt-3 pt-3")
@@ -147,7 +134,7 @@ function correctAnswer() {
     choicesContent.appendChild(correctNotify);
 }
 
-// Notify user that they got the answer wrong
+// Wrong Answer
 function incorrectAnswer() {
     var incorrectNotify = document.createElement("div");
     incorrectNotify.setAttribute("class", "border-top mt-3 pt-3"); incorrectNotify.setAttribute("style", "font-size: 12px; color: red; font-weight: bold;");
@@ -155,15 +142,12 @@ function incorrectAnswer() {
     choicesContent.appendChild(incorrectNotify);
 }
 
-// The timer that counts down when the game is started
+// The timer that counts down
 function countdownClock() {
     var timerInterval = setInterval(function () {
-        // Display time and decrease by second
         gameClock.textContent = gameTimer;
         gameTimer--;
 
-
-        // Once the timer hits zero, game is ended
         if (gameTimer <= 0) {
             clearInterval(timerInterval);
             gameClock.textContent = "0";
@@ -172,66 +156,41 @@ function countdownClock() {
             choicesContent.setAttribute("display", "none");
             startMenu.setAttribute("style", "display: block;");
             questionHeading.textContent = "Your score is: " + gameTimer;
-            gameTimer = numberOfQuestions * 15;
+            gameTimer = numberOfQuestions * 10;
         }
-        // Freeze clock if user runs through all the questions and end game
         else if (questionNumber === 10) {
             clearInterval(timerInterval);
-            // Reset stats so user can start a new game
             questionNumber = 0;
-            gameTimer = numberOfQuestions * 15;
+            gameTimer = numberOfQuestions * 10;
         }
 
     }, 1000);
 }
 
-
-
-// Add event to the button choices and see if what the 
-// user clicks matches the answer in the questions array
 document.addEventListener("click", function (event) {
     if (event.target.matches('.choice-btn')) {
-        // console.log(event.target.textContent);
         event.stopPropagation();
         event.preventDefault();
-        // Condition if user selects correct answer
         if (event.target.textContent === questions[questionNumber].answer) {
 
-
-
-            // Move on to the next question
             questionNumber = questionNumber + 1;
-            // Add time to the clock
             gameTimer += 5;
-
 
             if (questionNumber <= (numberOfQuestions - 1)) {
                 questionHeading.textContent = questions[questionNumber].title;
-                // Run function to clear buttons
-                // and list new choices
                 choicesContent.innerHTML = " ";
                 listChoices();
-                // Inform user that they got the right answer
                 correctAnswer();
-                // console.log("Question Number: " + questionNumber);
             } else {
-                // End of game so clear any trace of choices
                 choicesContent.innerHTML = " ";
-                // Inform user that they got the right answer
                 correctAnswer();
-                // Bring up input for user to enter in their high score
                 enterInitialsMenu.setAttribute("style", "display: block;");
-                // Allow user to restart quiz
                 startMenu.setAttribute("style", "display: block;");
                 viewHighScoresLink.setAttribute("style", "display: inline;");
                 clearScoresBtn.setAttribute("style", "display: none;");
-                // Display the user's final score
                 questionHeading.textContent = "Your score is: " + gameTimer;
-                // User's final score is equal to the time left in the game
                 finalScore = gameTimer;
             }
-
-
         }
         // Condition if user selects wrong answer
         else if (event.target.textContent !== questions[questionNumber].answer) {
@@ -239,29 +198,20 @@ document.addEventListener("click", function (event) {
             // Move on to the next question
             questionNumber = questionNumber + 1;
             // Remove time from the clock
-            gameTimer -= 15;
+            gameTimer -= 10;
 
             if (questionNumber <= (numberOfQuestions - 1)) {
                 questionHeading.textContent = questions[questionNumber].title;
-                // Run function to clear buttons
-                // and list new choices
                 choicesContent.innerHTML = " ";
                 listChoices();
-                // Inform user that they got the wrong answer
                 incorrectAnswer();
             } else {
-                // End of game so clear any trace of choices
                 choicesContent.innerHTML = " ";
-                // Inform user that they got the wrong answer
                 incorrectAnswer();
-                // Bring up input for user to enter in their high score
                 enterInitialsMenu.setAttribute("style", "display: block;");
-                // Allow user to restart quiz
                 startMenu.setAttribute("style", "display: block;");
                 viewHighScoresLink.setAttribute("style", "display: inline;");
-                // Display the user's final score
                 questionHeading.textContent = "Your score is: " + gameTimer;
-                // User's final score is equal to the time left in the game
                 finalScore = gameTimer;
             }
 
@@ -311,12 +261,9 @@ function goBackToStart() {
     questionHeading.textContent = "Coding Quiz Challenge";
 }
 
-// When user clicks submit, enter their score
-// and their initials to their local Storage
 enterInitialsBtn.addEventListener("click", enterInitials);
 
 function viewHighScores() {
-    // Show the score menu with title
     scoresMenu.innerHTML = " ";
     startMenu.setAttribute("style", "display: none;");
     scoresMenu.setAttribute("style", "display: block;");
@@ -328,19 +275,12 @@ function viewHighScores() {
     clearScoresBtn.setAttribute("style", "display: inline;");
 
 
-    // Grab the high scores from user's local storage
     var highScoreList = window.localStorage.getItem("high scores");
 
-    // Convert the high scores from strings to an array of objects
     var highScoreObject = JSON.parse(highScoreList);
 
-    // console.log(highScoreObject);
-
-    // Sort the objects from highest scores to lowest
     highScoreObject.sort(highestToLowest);
 
-    // Cycle through the array and list each initial with 
-    // corresponding score as an element
     for (var i = 0; i <= highScores.length - 1; i++) {
         var highScoreEntry = document.createElement("div");
         highScoreEntry.setAttribute("class", "alert alert-warning");

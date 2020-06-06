@@ -1,4 +1,21 @@
 # Web-APIs-Code-Quiz
+
+An application that generates a Quiz based on Javascript. This has questions that relate to my personal Interests. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code.
+
+In this project, we utilised Javascript in order to create a quiz based on a variation of arrays of questions and answers as required to complete the quiz. 
+
+Link to code: A link to the Generator - https://recordsword.github.io/Web-APIs-Code-Quiz/
+
+Screenshots: https://recordsword.github.io/Javascript-Password-Generator/Snips/Front_page.jpg
+
+https://recordsword.github.io/Javascript-Password-Generator/Snips/Generate_BTN_activate.jpg
+
+https://recordsword.github.io/Javascript-Password-Generator/Snips/Prompts_in_program.jpg
+
+https://recordsword.github.io/Javascript-Password-Generator/Snips/Generated_password_alert.jpg
+
+https://recordsword.github.io/Javascript-Password-Generator/Snips/Generated_password.jpg
+
 As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment, which is typically a combination of multiple-choice questions and interactive challenges. Build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
 
 User Story
