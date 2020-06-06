@@ -6,13 +6,10 @@ In this project, we utilised Javascript in order to create a quiz based on a var
 
 Link to code: A link to the Generator - https://recordsword.github.io/Web-APIs-Code-Quiz/
 
-Screenshots: https://recordsword.github.io/Web-APIs-Code-Quiz/Snips/Start Quiz.jpg
-
- https://recordsword.github.io/Web-APIs-Code-Quiz/Snips/Quiz Layout.jpg
- 
- https://recordsword.github.io/Web-APIs-Code-Quiz/Snips/Final Score.jpg
- 
- https://recordsword.github.io/Web-APIs-Code-Quiz/Snips/Highscores with Clear function.jpg
+Screenshots: https://github.com/RecordSword/Web-APIs-Code-Quiz/blob/master/Assets/Snips/Start%20Quiz.JPG
+https://github.com/RecordSword/Web-APIs-Code-Quiz/blob/master/Assets/Snips/Quiz%20Layout.JPG
+https://github.com/RecordSword/Web-APIs-Code-Quiz/blob/master/Assets/Snips/Final%20Score.JPG
+https://github.com/RecordSword/Web-APIs-Code-Quiz/blob/master/Assets/Snips/Highscores%20with%20Clear%20function.JPG
 
 As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment, which is typically a combination of multiple-choice questions and interactive challenges. Build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
 
